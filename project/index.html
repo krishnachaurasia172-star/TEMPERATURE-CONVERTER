@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f5ef">
+  <title>Thermo / Temperature Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="index.html" aria-label="Thermo home"><span class="mark" aria-hidden="true">T</span> thermo<span class="wordmark-slash">/</span></a>
+      <span class="topbar-note"><span class="status-dot" aria-hidden="true"></span> UNIT CONVERTER <span class="topbar-divider">/</span> C · °F · K</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">A LITTLE LESS GUESSWORK</p>
+      <h1 id="page-title">Temperature,<br><span>translated.</span></h1>
+      <p class="intro-copy">Three scales, one clear answer. Pick a starting point and see where it lands.</p>
+    </section>
+
+    <section class="converter" aria-label="Temperature converter">
+      <div class="converter-topline">
+        <span>CONVERT</span>
+        <span class="live-label"><span class="status-dot" aria-hidden="true"></span> LIVE</span>
+      </div>
+      <div class="conversion-row">
+        <label class="field-block" for="temperature-input">
+          <span class="field-label">I HAVE</span>
+          <span class="input-wrap"><input id="temperature-input" type="number" step="any" value="21" inputmode="decimal" autocomplete="off" aria-describedby="validation-message"><span class="degree-mark" aria-hidden="true">°</span></span>
+        </label>
+        <label class="field-block unit-block" for="from-unit">
+          <span class="field-label">FROM</span>
+          <select id="from-unit" aria-label="Convert from">
+            <option value="C" selected>Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+          </select>
+        </label>
+        <button class="swap-button" id="swap-button" type="button" aria-label="Swap units" title="Swap units">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7h12m0 0-3-3m3 3-3 3M17 17H5m0 0 3 3m-3-3 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <label class="field-block unit-block" for="to-unit">
+          <span class="field-label">TO</span>
+          <select id="to-unit" aria-label="Convert to">
+            <option value="C">Celsius (°C)</option>
+            <option value="F" selected>Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+          </select>
+        </label>
+      </div>
+      <p class="validation-message" id="validation-message" role="status" aria-live="polite"></p>
+      <div class="result-row" aria-live="polite" aria-atomic="true">
+        <div><p class="field-label">THAT COMES TO</p><p class="result-value" id="result-value">69.80<span>°F</span></p></div>
+        <span class="result-caption">converted<br>in a moment</span>
+      </div>
+    </section>
+
+    <section class="reference" aria-labelledby="reference-title">
+      <div class="section-heading"><h2 id="reference-title">Same temperature, other scales</h2><span class="section-index">01 — 03</span></div>
+      <div class="scale-list">
+        <div class="scale-row"><span class="scale-symbol celsius" aria-hidden="true">°C</span><span class="scale-name">Celsius</span><span class="scale-value" id="celsius-value">21.00 °C</span></div>
+        <div class="scale-row"><span class="scale-symbol fahrenheit" aria-hidden="true">°F</span><span class="scale-name">Fahrenheit</span><span class="scale-value" id="fahrenheit-value">69.80 °F</span></div>
+        <div class="scale-row"><span class="scale-symbol kelvin" aria-hidden="true">K</span><span class="scale-name">Kelvin</span><span class="scale-value" id="kelvin-value">294.15 K</span></div>
+      </div>
+    </section>
+
+    <footer class="footer"><span>GOOD MATH. NO THERMOMETER REQUIRED.</span><a href="README.md">ABOUT THIS PROJECT <span aria-hidden="true">↗</span></a></footer>
+  </main>
+</body>
+</html>
